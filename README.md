@@ -45,19 +45,20 @@ Raw CSV Files → Python (Validation & Transformation) → PostgreSQL
 
 ## Project Structure
 
+```
 manufacturing-data-ingestion-python/
 ├── data/
-│ ├── raw/ # Incoming CSV files
-│ └── processed/ # Cleaned / validated outputs
+│   ├── raw/           # Incoming CSV files
+│   └── processed/     # Cleaned / validated outputs
 ├── src/
-│ ├── ingest.py # Pipeline orchestration
-│ ├── validate.py # Data validation logic
-│ ├── transform.py # Data transformation logic
-│ └── db.py # Database connection and loading
+│   ├── ingest.py      # Pipeline orchestration
+│   ├── validate.py    # Data validation logic
+│   ├── transform.py   # Data transformation logic
+│   └── db.py          # Database connection and loading
 ├── sql/
-│ └── schema.sql
+│   └── schema.sql
 └── requirements.txt
-
+```
 
 ---
 
