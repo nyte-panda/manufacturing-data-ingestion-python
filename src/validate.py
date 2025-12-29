@@ -35,3 +35,31 @@ Returns:
 
     return df
 
+
+def validate_work_orders(df : pd.DataFrame) -> pd.DataFrame:
+    """
+    Validate work order records:
+
+    Rules:
+    - Required fields must not be null
+    - Quantity must be greateer than zero
+
+    Returns:
+    - Valid records only 
+    """
+
+    required_columns = {
+        "work_order_id",
+        "part_id",
+        "quantity",
+        "status",
+    }
+    
+    # Drop rows with missing required fields
+    df = df.dropna(subset=required_columns)
+
+    # Enforce quantity validity
+    df = df[df["quantity"] > 0]
+
+    return df
+
