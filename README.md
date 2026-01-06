@@ -8,8 +8,8 @@ their structure and contents, applies basic transformations, and loads clean
 data into a PostgreSQL database.
 
 The goal of this project is to demonstrate core data engineering skills such as
-data ingestion, validation, transformation, and reliable database loading
-using Python.
+data ingestion, validation, transformation, and reliable database loading using
+Python.
 
 ---
 
@@ -29,11 +29,10 @@ This project focuses on building that ingestion layer.
 The pipeline performs the following steps:
 
 - Read raw CSV files from disk
-- Validate required fields and basic data types
+- Validate required fields and basic data integrity rules
 - Enforce simple business rules (e.g. start time precedes end time)
 - Transform data into a standardized format
 - Load validated records into PostgreSQL tables
-- Log or reject invalid records
 
 ---
 
@@ -44,6 +43,7 @@ Raw CSV Files → Python (Validation & Transformation) → PostgreSQL
 ---
 
 ## Project Structure
+
 
 ```
 manufacturing-data-ingestion-python/
@@ -62,8 +62,12 @@ manufacturing-data-ingestion-python/
 
 ---
 
-## Scope
+## How to Run
 
-This project intentionally focuses on batch ingestion and data quality checks
-using Python. Workflow orchestration, streaming, and cloud infrastructure are
-out of scope and reserved for a future anchor project.
+1. Ensure PostgreSQL is running locally and the target schema exists.
+2. Activate a virtual environment and install dependencies:
+  ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 -m src.ingest
